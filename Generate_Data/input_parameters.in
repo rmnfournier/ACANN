@@ -1,0 +1,11 @@
+beta=2
+#inverse temperature
+output='validation'
+nb_data=1000
+nb_pics=21
+nb_gl=64
+nb_tau=512
+legendre_method='exact'
+example=0
+integral_tol=0.1
+noise_level=0.0

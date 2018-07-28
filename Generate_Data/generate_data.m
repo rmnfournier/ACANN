@@ -138,7 +138,7 @@ A=A./NORMALIZATION_FACTOR;
 %the exponential if the argument is bigger than 37
 kernel_handler = @(tau,x) (x'.*(BETA-tau)>=37).*exp(-x'.*tau)./(1+exp(-x'*BETA))+(x'.*(BETA-tau)<37).*exp(x'.*(BETA-tau))./(exp(BETA*x)+1);
 
-G_handlers= @(tau) -integral(@(x) kernel_handler(tau,x)*A_sum_handlers(x')',-OMEGA_0,OMEGA_0,'ArrayValued',true,'AbsTol',integral_tol)./NORMALIZATION_FACTOR'+(rand(size(tau))-0.5)*NOISE_LEVEL;
+G_handlers= @(tau)normrnd( -integral(@(x) kernel_handler(tau,x)*A_sum_handlers(x')',-OMEGA_0,OMEGA_0,'ArrayValued',true,'AbsTol',integral_tol)./NORMALIZATION_FACTOR',NOISE_LEVEL);
 
 taus=linspace(0,BETA,NB_TAU);
 G=(G_handlers(taus')');

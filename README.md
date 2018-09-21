@@ -20,7 +20,7 @@ The folder Generate Data offers a Matlab implementation of this process, used in
 
   'python train_ACANN.py data_location nb_data name nb_layers nb_epochs units' ,
   
-where 'data_location' is the path to the folder containing the files (A_data.csv, Gl_data.csv, A_validationset.csv, Gl_validationset.csv), 
+where 'data_location' is the path to the folder containing the files (A_data.csv, nl_data.csv, A_validationset.csv, nl_validationset.csv), 
 
 'nb_data' is the number of data to consider in the training dataset, 
 
@@ -37,7 +37,10 @@ For example : python train_ACANN.py ./Dataset 25000 test 3 100 1024 1024
 ###2.2.2 PyTorch
  The Folder PyTorch contains the necessary files to train the neural network.
 ## 2.3 Make predictions
+ Once the model is trained, one can use it to make predictions.
 ### 2.3.1 TensorFlow
+Predictions are easily made thanks to ACANN.py file.
+One can add different filenames to the list 'names' and provide the model to use in the model_file variable.
+
 ### 2.3.2 PyTorch
 
-## 2.4 Examples 

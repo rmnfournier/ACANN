@@ -25,10 +25,10 @@ print("The model has been loaded")
 
 
 for name in names:
-	features_file= "NoisyData/"+name+".csv"
+	features_file= name+".csv"
 	x_test = pandas.read_csv(features_file,header=None)
 	x_matrix= x_test.as_matrix()
 	prediction = model.predict(x_matrix)
-	np.savetxt('./Results/prediction_'+str(name)+'.csv', prediction,delimiter=',')
+	np.savetxt('prediction_'+str(name)+'.csv', prediction,delimiter=',')
 
 

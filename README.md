@@ -1,6 +1,6 @@
 Solving an Analytic Continuation problem with a deep Artificial Neural Network (ANN)
 
-#1. Problem Description
+# 1. Problem Description
  We are interested in the analytic continuation of the imaginary Green's function into the real frequency domain. We use a supervised learning approach for efficiently solving this problem. This method has both advantages of regularizing the problem by distilling prior knowledge into the training dataset and being robust against noisy inputs. Interested readers can look at our paper to get further details.
 
 # 2. Getting Started 
@@ -15,26 +15,26 @@ The folder Generate Data offers a Matlab implementation of this process, used in
 
 ## 2.2 Train the model
  We offer two ways of training the  Deep Neural Network: TensorFlow and Pytorch.
-###2.2.1 TensorFlow
+### 2.2.1 TensorFlow
  The Folder TensorFlow contains the necessary files to train the neural network. It requires Keras to be installed on the machine.  Taping the following commands launches the training :
 
   'python train_ACANN.py data_location nb_data name nb_layers nb_epochs units' ,
   
-where 'data_location' is the path to the folder containing the files (A_data.csv, nl_data.csv, A_validationset.csv, nl_validationset.csv), 
+where '**data_location**' is the path to the folder containing the files (A_data.csv, nl_data.csv, A_validationset.csv, nl_validationset.csv), 
 
-'nb_data' is the number of data to consider in the training dataset, 
+'**nb_data**' is the number of data to consider in the training dataset, 
 
-'name' is the prefix of the output files, 
+'**name**' is the prefix of the output files, 
 
-'nb_layers' is the number of dense layers to use, 
+'**nb_layers**' is the number of dense layers to use, 
 
-'nb_epochs' is the number of epochs to train on, 
+'**nb_epochs**' is the number of epochs to train on, 
 
-and 'units' is the number of weights in the different layers. 
+and '**units**' is the number of weights in the different layers. 
 
 For example : python train_ACANN.py ./Dataset 25000 test 3 100 1024 1024
 
-###2.2.2 PyTorch
+### 2.2.2 PyTorch
  The Folder PyTorch contains the necessary files to train the neural network.
 ## 2.3 Make predictions
  Once the model is trained, one can use it to make predictions.

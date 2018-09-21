@@ -35,12 +35,17 @@ and '**units**' is the number of weights in the different layers.
 For example : python train_ACANN.py ./Dataset 25000 test 3 100 1024 1024
 
 ### 2.2.2 PyTorch
- The Folder PyTorch contains the necessary files to train the neural network.
-## 2.3 Make predictions
- Once the model is trained, one can use it to make predictions.
-### 2.3.1 TensorFlow
-Predictions are easily made thanks to ACANN.py file.
-One can add different filenames to the list 'names' and provide the model to use in the model_file variable.
+ The Folder PyTorch contains the necessary files to train the neural network. One can modify the first line of 'train_ACANN.py' to use it : 
 
-### 2.3.2 PyTorch
+* *model = ACANN(64,1024,[128,256,512],drop_p=0.09).double()*
+
+ACANN(input_dim,output_dim,list(hiddenunits),dropout rate)
+
+* *train_data = Database(csv_target="../Database/A_training.csv",csv_input="../Database/nl_training.csv",nb_data=100000).get_loader()*
+
+* *validation_data=Database(csv_target="../Database/A_validation.csv",csv_input="../Database/nl_validation.csv",nb_data=1000).get_loader()*
+
+## 2.3 Make predictions
+ Once the model is trained, one can use it to make predictions thanks to ACANN.py file.
+One can add different filenames to the list 'names' and provide the model to use in the model_file variable.
 

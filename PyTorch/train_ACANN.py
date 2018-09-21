@@ -44,14 +44,12 @@ epochs = 1000
 step=-1
 print_every = 250
 print("Starting the training")
-std=1e-9
+
 # Training
 for e in range(epochs):
     model.train()
-    std /= 1.025
     #  Load a minibatch
     for G,A in trainloader:
-        G+=torch.randn(G.size()).normal_(mean=0,std=std).type(torch.cuda.DoubleTensor)
         step+=1
         # restart the optimizer
         optimizer.zero_grad()

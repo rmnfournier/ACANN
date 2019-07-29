@@ -1,3 +1,5 @@
+Note : See also ACANN_Bis repository for example involving Lennard-Jones particles and comparison with Maximum Entropy
+
 Solving an Analytic Continuation problem with a deep Artificial Neural Network (ANN)
 
 # 1. Problem Description
